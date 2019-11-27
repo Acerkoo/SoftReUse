@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="Customer" class="observer.visitor.Customer"> </bean>
+    <bean id="Cashier" class="observer.visitor.Cashier"> </bean>
+    <bean id="Apple" class="observer.market.Apple"> </bean>
+    <bean id="Beer" class="observer.market.Beer"> </bean>
+    <bean id="BuyBasket" class="observer.market.BuyBasket"> </bean>
+    <bean id="visitor" class="observer.visitor.Visitor" abstract="true">
+        <property name="Customer" ref="Customer"/>
+        <property name="Cashier" ref="Cashier"/>
+    </bean>
+</beans>
