@@ -6,10 +6,10 @@ import observer.market.Beer;
 public class Cashier implements Visitor {
     @Override
     public void visit(Apple apple) {
-        apple.accept(this);
+        System.out.println("Cashier visit Apple!");
     }
     @Override
     public void visit(Beer beer) {
-        beer.accept(this);
+        System.out.println("Cashier visit Beer!");
     }
 }

@@ -1,6 +1,7 @@
 package observer.market;
 
 import observer.visitor.Visitor;
+import org.springframework.context.annotation.Primary;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
@@ -10,7 +11,9 @@ public class BuyBasket {
     private List<Product> proList = new ArrayList<>();
 
     public void accept(Visitor visiter) {
-        System.out.println(visiter.getClass().getName() + " visit buybasket");
+        for (Product product: proList) {
+            product.accept(visiter);
+        }
     }
     public void addProduct(Product product) {
         proList.add(product);

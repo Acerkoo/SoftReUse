@@ -23,12 +23,11 @@ public class Client {
         Visitor customer = (Customer) fsml.getBeanFactory().getBean("Customer");
         Visitor cashier = (Cashier) fsml.getBeanFactory().getBean("Cashier");
 
-        customer.visit(apple);
-        customer.visit(beer);
-        buybasket.accept(customer);
 
-        cashier.visit(apple);
-        cashier.visit(beer);
+        buybasket.addProduct(apple);
+        buybasket.addProduct(beer);
+
+        buybasket.accept(customer);
         buybasket.accept(cashier);
     }
 }
